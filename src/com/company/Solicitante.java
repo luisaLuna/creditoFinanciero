@@ -68,7 +68,7 @@ public class Solicitante {
     public int calcularEdad() {
         LocalDate ahora = LocalDate.now();
         Period periodo = Period.between(fechaNac, ahora);
-        return periodo.getYears();
+        return edad = periodo.getYears();
     }
 
 }
