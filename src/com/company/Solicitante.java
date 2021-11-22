@@ -2,7 +2,6 @@ package com.company;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Solicitante {
@@ -20,11 +19,11 @@ public class Solicitante {
         return nombre = scn.nextLine(); //Se guarda lo que se introdujo en la variable "nombre" y ésta se retorna
     }
 
-    public LocalDate capturarFechaNac(){
+    public void capturarFechaNac(){
         Scanner scn = new Scanner(System.in);
         System.out.print("Por favor ingresa la fecha de nacimiento con el formato Año-Mes-Día, ejemplo: 1999-08-16 \n Fecha de Nacimiento: ");
         String res = scn.nextLine();
-        return fechaNac = LocalDate.parse(res);
+         fechaNac = LocalDate.parse(res);
     }
 
     public String capturarSexo(){
@@ -65,10 +64,12 @@ public class Solicitante {
     }
 
     //Método para calcular edad usando el API LocalDate
-    public int calcularEdad() {
+    public void calcularEdad() {
         LocalDate ahora = LocalDate.now();
         Period periodo = Period.between(fechaNac, ahora);
-        return edad = periodo.getYears();
+       edad = periodo.getYears();
     }
-
+    public int getEdad() {
+        return edad;
+    }
 }
