@@ -21,7 +21,7 @@ public class Credito {
 
     //Métodos para verificar si cuenta con los documentos completos
     public boolean verificarCurp() {
-        return !solicitante.capturarCurp().isEmpty(); //Lógica para comprobar si tiene CURP
+        return !solicitante.getCurp().isEmpty(); //Lógica para comprobar si tiene CURP
     }
     public boolean verificarDocu() {
         //Lógica para comprobar si tiene todos los documentos completos

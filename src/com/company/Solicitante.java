@@ -12,11 +12,11 @@ public class Solicitante {
 
 
     //Métodos para capturar los datos del solicitante del crédito
-    public String capturarNombre(){
+    public void capturarNombre(){
         Scanner scn = new Scanner(System.in); //Creación del lector de valores del input
         System.out.print("Por favor escribe los datos del solicitante del crédito. \n"); //Mensaje al usuario para que introduzca los datos
         System.out.print("Nombre completo: "); //Mensaje al usuario para que introduzca los datos
-        return nombre = scn.nextLine(); //Se guarda lo que se introdujo en la variable "nombre" y ésta se retorna
+        nombre = scn.nextLine(); //Se guarda lo que se introdujo en la variable "nombre" y ésta se retorna
     }
 
     public void capturarFechaNac(){
@@ -26,23 +26,23 @@ public class Solicitante {
         fechaNac = LocalDate.parse(res);
     }
 
-    public String capturarSexo(){
+    public void capturarSexo(){
         Scanner scn = new Scanner(System.in);
         System.out.print("Sexo: ");
-        return sexo = scn.nextLine();
+        sexo = scn.nextLine();
     }
 
-    public String capturarDomicilio(){
+    public void capturarDomicilio(){
         Scanner scn = new Scanner(System.in);
         System.out.print("Domicilio: ");
-        return domicilio = scn.nextLine();
+         domicilio = scn.nextLine();
     }
 
-    public String capturarCurp(){
+    public void capturarCurp(){
         Scanner scn = new Scanner(System.in);
         System.out.print("¿Cuenta con CURP? Si la respuesta es SI, por favor ingreselo a continuación\n");
         System.out.print("Curp: ");
-        return curp = scn.nextLine();
+        curp = scn.nextLine();
     }
 
     public boolean capturarComprobanteDomicilio(){
@@ -69,7 +69,13 @@ public class Solicitante {
         Period periodo = Period.between(fechaNac, ahora);
        edad = periodo.getYears();
     }
+
+    //Métodos get
     public int getEdad() {
         return edad;
     }
+    public String getCurp() { return curp; }
+    public String getNombre() { return nombre; }
+    public String getSexo() { return sexo; }
+    public String getDomicilio() { return domicilio; }
 }
