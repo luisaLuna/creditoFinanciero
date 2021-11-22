@@ -4,13 +4,13 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Credito {
+    private final Solicitante solicitante;
     private String nomEmpleado, productoFinanciero;
-    private int monto;
     private LocalDate fechaSolicitud, fechasPagos;
 
-    public Credito(String productoFinanciero, int monto) {
+    public Credito(String productoFinanciero, Solicitante cliente) {
         this.productoFinanciero = productoFinanciero;
-        this.monto = monto;
+        this.solicitante = cliente;
     }
 
     public String capturarNomEmpleado() {
@@ -18,8 +18,6 @@ public class Credito {
         Scanner scn = new Scanner(System.in); //System.in is a standard input stream
        return nomEmpleado = scn.nextLine(); //reads string
     }
-
-    Solicitante solicitante = new Solicitante();
 
     //Métodos para verificar si cuenta con los documentos completos
     public boolean verificarCurp() {
