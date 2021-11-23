@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         Solicitante solicitante = new Solicitante();
-        Credito credito = new Credito("Crédito de apoyo del Gobierno", solicitante);
+        Credito credito = new Credito(solicitante);
         credito.capturarNomEmpleado();
         solicitante.capturarNombre();
         solicitante.capturarFechaNac();
@@ -15,5 +15,6 @@ public class Main {
         solicitante.capturarCurp();
         solicitante.calcularEdad();
         System.out.println(credito.calcularCredito());
+        System.out.println(credito.calcularFechas());
     }
 }
