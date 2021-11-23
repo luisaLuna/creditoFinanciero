@@ -21,7 +21,7 @@ public class Solicitante {
 
     public void capturarFechaNac(){
         Scanner scn = new Scanner(System.in);
-        System.out.print("Por favor ingresa la fecha de nacimiento con el formato Año-Mes-Día, ejemplo: 1999-08-16 \n Fecha de Nacimiento: ");
+        System.out.print("Por favor ingresa la fecha de nacimiento con el formato Año-Mes-Día, ejemplo: 1999-08-16 \nFecha de Nacimiento: ");
         String res = scn.nextLine();
         fechaNac = LocalDate.parse(res);
     }

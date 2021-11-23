@@ -30,13 +30,14 @@ public class Credito {
 
     //Métodos para asignar la cantidad del crédito dependiendo de la edad
     public String calcularCredito() {
-        return switch(solicitante.getEdad()) {
-            case 30, 31, 32, 33, 34, 35 -> "$4,500 (cuatro mil quinientos pesos)";
-            case 36, 37, 38, 39, 40 -> "$5,000 (cinco mil pesos)";
-            case 41, 42, 43, 44, 45, 46, 47, 48, 49, 50 -> "$5,500 (cinco mil quinientos pesos)";
-            default -> "No cuenta con la edad requerida para poder obtener un crédito";
-        };
+        if (verificarDocu()) {
+            return switch (solicitante.getEdad()) {
+                case 30, 31, 32, 33, 34, 35 -> "$4,500 (cuatro mil quinientos pesos)";
+                case 36, 37, 38, 39, 40 -> "$5,000 (cinco mil pesos)";
+                case 41, 42, 43, 44, 45, 46, 47, 48, 49, 50 -> "$5,500 (cinco mil quinientos pesos)";
+                default -> "Lamento informarle %s que no cuenta con la edad requerida para poder obtener un crédito".formatted(solicitante.getNombre());
+            };
+        } else return "Lamento informarle %s que no se le puede otorgar el crédito ya que no cuenta con los documentos necesarios".formatted(solicitante.getNombre());
     }
-
 
 }
