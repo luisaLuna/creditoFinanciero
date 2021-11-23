@@ -46,12 +46,7 @@ public class Credito {
         LocalDate segundoPago = fechaSolicitud.plusMonths(6).withDayOfMonth(fechaSolicitud.getDayOfMonth());
         LocalDate tercerPago = fechaSolicitud.plusMonths(9).withDayOfMonth(fechaSolicitud.getDayOfMonth());
         LocalDate cuartoPago = fechaSolicitud.plusMonths(12).withDayOfMonth(fechaSolicitud.getDayOfMonth());
-            return "Las fechas de sus pagos son:\n" +
-                    "1 Pago: " + primerPago.getDayOfMonth() + "/" + primerPago.getMonth() + "/" + primerPago.getYear() + "\n" +
-                    "2 Pago: " + segundoPago.getDayOfMonth() + "/" + segundoPago.getMonth() + "/" + segundoPago.getYear() + "\n" +
-                    "3 Pago: " + tercerPago.getDayOfMonth() + "/" + tercerPago.getMonth() + "/" + tercerPago.getYear() + "\n" +
-                    "4 Pago: " + cuartoPago.getDayOfMonth() + "/" + cuartoPago.getMonth() + "/" + cuartoPago.getYear() + "\n" +
-                    "**** IGNORA ESTE MENSAJE SI NO TIENES UN CRÉDITO OTORGADO ****";
+            return "Las fechas de sus pagos son:\n 1 Pago: %1$td / %1$tm / %1$tY \n 2 Pago: %2$td / %2$tm / %2$tY \n 3 Pago: %3$td / %3$tm / %3$tY \n 4 Pago: %4$td / %4$tm / %4$tY ".formatted(primerPago, segundoPago, tercerPago, cuartoPago);
     }
 
 }
