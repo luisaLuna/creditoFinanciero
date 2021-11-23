@@ -76,6 +76,4 @@ public class Solicitante {
     }
     public String getCurp() { return curp; }
     public String getNombre() { return nombre; }
-    public String getSexo() { return sexo; }
-    public String getDomicilio() { return domicilio; }
 }
